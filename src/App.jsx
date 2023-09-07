@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import IconoNuevoGasto from '../public/img/nuevo-gasto.svg'
 function App() {
   const [presupuesto,setPresupuesto] = useState(0);
   const [isValidPresupuesto,setIsValidPresupuesto] = useState(false);
@@ -7,7 +8,11 @@ function App() {
     <div>
       <Header presupuesto={presupuesto} setPresupuesto={setPresupuesto}
               isValidPresupuesto={isValidPresupuesto} setIsValidPresupuesto={setIsValidPresupuesto}/>
-      <h1>Control-gastos-vite</h1>
+      {isValidPresupuesto && (
+      <div className='nuevo-gasto'>
+        <img src={IconoNuevoGasto} alt='Nuevo Gasto'/>
+      </div>
+      )}
     </div>
   )
 }
