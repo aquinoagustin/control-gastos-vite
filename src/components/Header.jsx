@@ -1,4 +1,4 @@
-import NuevoPresupuesto from "./NuevoPrusupuesto"
+import NuevoPresupuesto from "./NuevoPresupuesto"
 import ControlPresupuesto from "./ControlPresupuesto"
 export default function Header({presupuesto,
     setPresupuesto,
