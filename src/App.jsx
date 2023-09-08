@@ -20,7 +20,7 @@ function App() {
         <img src={IconoNuevoGasto} alt='Nuevo Gasto' onClick={handleNuevoGasto}/>
       </div>
       )}
-      {modal && <Modal/>}
+      {modal && <Modal setModal={setModal}/>}
     </div>
   )
 }
