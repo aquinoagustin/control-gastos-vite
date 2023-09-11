@@ -9,7 +9,7 @@ export default function Modal({ setModal, animarModal, setAnimarModal,guardarGas
     }, 500);
   };
 
-  const [nombre, setNombre] = useState(0);
+  const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState(0);
   const [categoria, setCategoria] = useState("");
   const [mensaje,setMensaje] = useState('');
