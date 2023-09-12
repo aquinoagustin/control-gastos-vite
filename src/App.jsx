@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Modal from "./components/Modal";
 import ListadoGastos from "./components/ListadoGastos";
 import { generarId } from "./helpers";
-import IconoNuevoGasto from "../public/img/nuevo-gasto.svg";
+import IconoNuevoGasto from "./img/nuevo-gasto.svg";
 function App() {
   const [presupuesto, setPresupuesto] = useState(0);
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false);

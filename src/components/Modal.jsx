@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CerrarBtn from "../../public/img/cerrar.svg";
+import CerrarBtn from "../img/cerrar.svg";
 import Mensaje from "./Mensaje";
 export default function Modal({ setModal, animarModal, setAnimarModal,guardarGasto }) {
   const ocultarModal = () => {
