@@ -10,6 +10,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
   const [gastos,setGastos] = useState([]);
+  const [gastoEditar,setGastoEditar] = useState({});
   const handleNuevoGasto = () => {
     setModal(true);
     setTimeout(() => {
@@ -40,7 +41,7 @@ function App() {
       {isValidPresupuesto && (
         <>
           <main>
-            <ListadoGastos gastos={gastos}/>
+            <ListadoGastos gastos={gastos} setGastoEditar={setGastoEditar}/>
           </main>
           <div className="nuevo-gasto">
             <img
