@@ -11,5 +11,11 @@ export const formatearFecha = fecha =>{
         month:'long',
         day:'2-digit',
     }
-    return fechaNueva.toLocaleDateString(es-ES,opciones);
+    return fechaNueva.toLocaleDateString('es-ES',opciones);
+}
+export const formatearCantidad = (cantidad) =>{
+    return cantidad?.toLocaleString('en-US',{
+        style:'currency',
+        currency:'USD'
+    })
 }
