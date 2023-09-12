@@ -7,13 +7,13 @@ import {
 } from 'react-swipeable-list';
 import "react-swipeable-list/dist/styles.css";
 import { formatearFecha } from "../helpers";
-import IconoAhorro from '../../public/img/icono_ahorro.svg';
-import IconoCasa from '../../public/img/icono_casa.svg';
-import IconoComida from '../../public/img/icono_comida.svg';
-import IconoGastos from '../../public/img/icono_gastos.svg';
-import IconoOcio from '../../public/img/icono_ocio.svg';
-import IconoSalud from '../../public/img/icono_salud.svg';
-import IconoSuscripciones from '../../public/img/icono_suscripciones.svg';
+import IconoAhorro from '../img/icono_ahorro.svg';
+import IconoCasa from '../img/icono_casa.svg';
+import IconoComida from '../img/icono_comida.svg';
+import IconoGastos from '../img/icono_gastos.svg';
+import IconoOcio from '../img/icono_ocio.svg';
+import IconoSalud from '../img/icono_salud.svg';
+import IconoSuscripciones from '../img/icono_suscripciones.svg';
 
 const diccionarioIconos = {
   ahorro: IconoAhorro,
