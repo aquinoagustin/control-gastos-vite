@@ -12,7 +12,7 @@ export default function ControlPresupuesto({gastos,presupuesto}){
         const totalGastado = gastos.reduce((total,gasto)=>gasto.cantidad + total,0);
         console.log(totalGastado)
         setGastado(totalGastado);
-        setDisponible(presupuesto);
+        setDisponible(presupuesto-totalGastado);
     },[gastos])
 
 
