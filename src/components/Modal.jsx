@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CerrarBtn from "../img/cerrar.svg";
 import Mensaje from "./Mensaje";
-export default function Modal({ setModal, animarModal, setAnimarModal,guardarGasto }) {
+export default function Modal({ setModal, animarModal, setAnimarModal,guardarGasto,gastoEditar }) {
   const ocultarModal = () => {
     setAnimarModal(false);
     setTimeout(() => {
@@ -13,6 +13,17 @@ export default function Modal({ setModal, animarModal, setAnimarModal,guardarGas
   const [cantidad, setCantidad] = useState(0);
   const [categoria, setCategoria] = useState("");
   const [mensaje,setMensaje] = useState('');
+
+
+  useEffect(()=>{
+    if(Object.keys(gastoEditar).length > 0){
+      setNombre(gastoEditar.nombre);
+      setCantidad(gastoEditar.cantidad);
+      setCategoria(gastoEditar.categoria);
+    }
+
+  },[gastoEditar])
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -32,7 +43,7 @@ export default function Modal({ setModal, animarModal, setAnimarModal,guardarGas
         <img src={CerrarBtn} alt="Cerrar Modal" onClick={ocultarModal} />
       </div>
       <form className={`formulario ${animarModal ? "animar" : "cerrar"}`} onSubmit={handleSubmit}>
-        <legend>Nuevo Gasto</legend>
+        <legend> {(Object.keys(gastoEditar).length > 0)?'Editar Gasto':'Nuevo Gasto'}</legend>
           {mensaje && <Mensaje tipo={'error'}>{mensaje}</Mensaje>}
         <div className="campo">
           <label htmlFor="nombre">Nombre Gasto</label>
