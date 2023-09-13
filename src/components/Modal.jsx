@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CerrarBtn from "../img/cerrar.svg";
 import Mensaje from "./Mensaje";
 export default function Modal({ setModal, animarModal, setAnimarModal,guardarGasto }) {
