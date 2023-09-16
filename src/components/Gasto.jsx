@@ -26,7 +26,8 @@ const diccionarioIconos = {
 }
 
 export default function Gasto({ gasto,setGastoEditar }) {
-  const { nombre, cantidad, categoria, id,fecha } = gasto;
+  const { nombre, cantidad, categoria, id,estado,fecha } = gasto;
+  console.log(gasto);
   const leadingActions = () =>(
     <LeadingActions>
       <SwipeAction onClick={()=>setGastoEditar(gasto)}>
@@ -57,7 +58,7 @@ export default function Gasto({ gasto,setGastoEditar }) {
           <p className="categoria">{categoria}</p>
           <p className="nombre-gasto">{nombre}</p>
           <p className="fecha-gasto">
-            Agregado el : {''}
+            {estado ? 'Editado el: ': 'Agregado el : '}
             <span>{formatearFecha(fecha)}</span>
           </p>
         </div>

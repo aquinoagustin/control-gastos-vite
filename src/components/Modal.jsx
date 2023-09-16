@@ -13,13 +13,18 @@ export default function Modal({ setModal, animarModal, setAnimarModal,guardarGas
   const [cantidad, setCantidad] = useState(0);
   const [categoria, setCategoria] = useState("");
   const [mensaje,setMensaje] = useState('');
-
+  const [fecha,setFecha] = useState('');
+  const [estado,setEstado] = useState(false);
+  const [id,setId] = useState('');
 
   useEffect(()=>{
     if(Object.keys(gastoEditar).length > 0){
       setNombre(gastoEditar.nombre);
       setCantidad(gastoEditar.cantidad);
       setCategoria(gastoEditar.categoria);
+      setFecha(gastoEditar.fecha = Date.now())
+      setEstado(gastoEditar.estado = true);
+      setId(gastoEditar.id);
     }
 
   },[gastoEditar])
@@ -34,7 +39,7 @@ export default function Modal({ setModal, animarModal, setAnimarModal,guardarGas
       },3000)
       return;
     }
-    guardarGasto({nombre,cantidad,categoria});
+    guardarGasto({nombre,cantidad,categoria,fecha,estado,id});
   }
 
   return (
