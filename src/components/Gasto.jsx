@@ -25,9 +25,8 @@ const diccionarioIconos = {
   suscripciones : IconoSuscripciones
 }
 
-export default function Gasto({ gasto,setGastoEditar }) {
+export default function Gasto({ gasto,setGastoEditar,eliminarGasto }) {
   const { nombre, cantidad, categoria, id,estado,fecha } = gasto;
-  console.log(gasto);
   const leadingActions = () =>(
     <LeadingActions>
       <SwipeAction onClick={()=>setGastoEditar(gasto)}>
@@ -39,7 +38,9 @@ export default function Gasto({ gasto,setGastoEditar }) {
   
   const trailingActions = () =>(
     <TrailingActions>
-      <SwipeAction onClick={()=>console.log('eliminar')}>
+      <SwipeAction onClick={()=>eliminarGasto(id)}
+        destructive={true}
+      >
         Eliminar
       </SwipeAction>
     </TrailingActions>

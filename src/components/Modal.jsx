@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import CerrarBtn from "../img/cerrar.svg";
 import Mensaje from "./Mensaje";
-export default function Modal({ setModal, animarModal, setAnimarModal,guardarGasto,gastoEditar }) {
+export default function Modal({ setModal, animarModal, setAnimarModal,guardarGasto,gastoEditar,setGastoEditar }) {
   const ocultarModal = () => {
     setAnimarModal(false);
+    setGastoEditar({});
     setTimeout(() => {
       setModal(false);
     }, 500);
   };
-
+ 
   const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState(0);
   const [categoria, setCategoria] = useState("");
