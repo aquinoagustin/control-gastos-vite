@@ -2,11 +2,15 @@ import {useState, useEffect } from "react"
 import {formatearCantidad} from '../helpers/index';
 import { CircularProgressbar,buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-export default function ControlPresupuesto({gastos,presupuesto}){
+export default function ControlPresupuesto({gastos,
+    setGastos,
+    presupuesto,
+    setPresupuesto,
+    setIsValidPresupuesto
+}){
     const [porcentaje,setPorcentaje] = useState(0);
     const [disponible,setDisponible] = useState(0);
     const [gastado,setGastado] = useState(0);
-
     useEffect(()=>{
         const totalGastado = gastos.reduce((total,gasto)=>gasto.cantidad + total,0);
         
@@ -21,6 +25,11 @@ export default function ControlPresupuesto({gastos,presupuesto}){
     
     },[gastos])
 
+    const handleResetApp = () => {
+        setGastos([]);
+        setPresupuesto(0);
+        setIsValidPresupuesto(false);
+    }
 
     return(
         <div className="contenedor-presupuesto contenedor sombra dos-columnas">
@@ -35,6 +44,10 @@ export default function ControlPresupuesto({gastos,presupuesto}){
                 text={`${porcentaje}% Gastado` }/>
             </div>
             <div className="contenido-presupuesto">
+            <button className="reset-app"
+            type="button"
+            onClick={handleResetApp}
+            >Resetear App</button>
                 <p>
                     <span>Presupuesto:</span>{formatearCantidad(presupuesto)}
                 </p>
