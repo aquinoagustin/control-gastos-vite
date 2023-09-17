@@ -23,6 +23,7 @@ function App() {
 
   const [gastosFiltrados, setGastosFiltrados] = useState([]);
 
+
   const handleNuevoGasto = () => {
     setModal(true);
     setGastoEditar({});
@@ -87,10 +88,12 @@ function App() {
     }
   }, [filtro]);
 
+
   return (
     <div className={modal ? "fijar" : ""}>
       <Header
         gastos={gastos}
+        setGastos={setGastos}
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
         isValidPresupuesto={isValidPresupuesto}
